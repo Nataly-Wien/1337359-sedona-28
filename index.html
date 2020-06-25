@@ -1,12 +1,155 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
-  </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Седона</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
 
-  </body>
+<body>
+  <div class="container">
+    <header>
+      <nav class="main-nav">
+        <a class="main-nav__logo">
+          <img class="logo" src="img/logo.svg" width="138" height="70" alt="Эмблема города Седона">
+        </a>
+        <ul class="main-menu">
+          <li class="main-menu__item">
+            <a href="#">Информация</a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#">Фото и видео</a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#">Карта штата</a>
+          </li>
+          <li class="main-menu__item">
+            <a href="hotels.html">Гостиницы</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="visually-hidden">Сайт города Седона</h1>
+      <section class="promo">
+        <h2 class="promo__title">Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</h2>
+        <p class="visually-hidden">Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!</p>
+        <img src="img/main-photo.jpg" width="1200" height="509" alt="Окрестности Седоны">
+      </section>
+      <section class="reasons">
+        <h2 class="reasons__tille">
+          Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
+        </h2>
+        <dl class="reasons__list">
+          <dt class="reason reason--picture">Настоящий городок</dt>
+          <dd class="reason__content">Седона - не аттракцион для туристов, там течёт своя жизнь</dd>
+          <dd class="advises">
+            <dl class="advise__list">
+              <dt class="advise">Жильё</dt>
+              <dd class="advise__content">Рекомендуем пожить в настоящем мотеле, всё как в кино!</dd>
+              <dt class="advise">Еда</dt>
+              <dd class="advise__content">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</dd>
+              <dt class="advise">Сувениры</dt>
+              <dd class="advise__content">Не только китайского, но и местного производства!</dd>
+            </dl>
+          </dd>
+          <dt class="reason reason--picture">Там есть Мост Дьявола</dt>
+          <dd class="reason__content">Да, по нему можно пройти! Если конечно вы осмелитесь</dd>
+          <dt class="reason">Небольшая площадь</dt>
+          <dd class="reason__content">Все достопримечательности находятся очень близко</dd>
+          <dt class="reason">Красивая дорога</dt>
+          <dd class="reason__content">Ехать в Cедону из Лас-Вегаса совсем не скучно!</dd>
+          <dt class="reason">Мало туристов</dt>
+          <dd class="reason__content">Большинство едет в Гранд Каньон и толпится там</dd>
+        </dl>
+      </section>
+      <section class="search-hotel">
+        <h2>Поиск гостиницы в Седоне</h2>
+        <p>Заинтересовались?</p>
+        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
+        <form id="search-form" class="search" action="https://echo.htmlacademy.ru" method="get">
+          <p>
+            <label for="search-date-in">Дата заезда:</label>
+            <input type="text" name="search-date-in" id="search-date-in">
+            <span class="calender"></span>
+          </p>
+          <p>
+            <label for="search-date-out">Дата выезда:</label>
+            <input type="text" name="search-date-out" id="search-date-out">
+            <span class="calender"></span>
+          </p>
+          <p class="search__persons">
+            <span>
+              <label for="search-adults">Взрослые:</label>
+              <span class="person-number minus"></span>
+              <input type="number" name="search-adults" id="search-adults">
+              <span class="person-number plus"></span>
+            </span>
+            <span>
+              <label for="search-kids">Дети:</label>
+              <span class="person-number minus"></span>
+              <input type="number" name="search-kids" id="search-kids">
+              <span class="person-number plus"></span>
+            </span>
+          </p>
+          <!-- Не поняла: здесь отправка формы или переход к подбору гостиницы? -->
+          <button class="search__button" type="submit">Найти</button>
+          <!-- <a class="search__button" href="hotels.html">Найти</a> -->
+        </form>
+      </section>
+      <section>
+        <h2 class="visually-hidden">
+          Как проехать в Седону
+        </h2>
+        <img src="img/map.jpg" width="1199" height="593" alt="Карта штата с городом Седона посередине">
+      </section>
+    </main>
+
+    <footer>
+      <section class="contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <p>
+          <a href="#">#visitsedona</a>
+        </p>
+        <p>
+          <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
+        </p>
+      </section>
+      <section class="social">
+        <h2 class="visually-hidden">
+          Социальные сети
+        </h2>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__button" href="#">
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__button" href="#">
+              <span class="visually-hidden">Faceboock</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__button" href="#">
+              <span class="visually-hidden">Youtube</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <div class="develop">
+        <span>Website by</span>
+        <a href="https://htmlacademy.ru/intensive/htmlcss">
+          <img src="img/logo-htmlacademy.svg" width="115" height="41"
+            alt="Логотип компании-разработчика сайта HTML Academy">
+        </a>
+      </div>
+    </footer>
+  </div>
+
+
+</body>
+
 </html>
