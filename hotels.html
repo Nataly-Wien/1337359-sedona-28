@@ -139,20 +139,22 @@
           </fieldset>
           <fieldset class="price">
             <legend>Стоимость в сутки (Р):</legend>
-            <div class="price__block">
-              <label class="price__label" for="min-price">от</label>
-              <input type="number" id="min-price" name="min-price" value="0">
-              <label class="price__label" for="max-price">до</label>
-              <input type="number" id="max-price" name="max-price" value="3000">
-            </div>
-            <div class="range__controls">
-              <div class="scale">
-                <div class="progress"></div>
+            <div class="price__wrapper">
+              <div class="price__block">
+                <label class="price__label" for="min-price">от</label>
+                <input type="number" id="min-price" name="min-price" value="0">
+                <label class="price__label" for="max-price">до</label>
+                <input type="number" id="max-price" name="max-price" value="3000">
               </div>
-              <div class="range__btn range-btn--min" id="range-btn--min" tabindex="0"></div>
-              <div class="range__btn range-btn--max" id="range-btn--max" tabindex="0"></div>
+              <div class="range">
+                <div class="range__scale">
+                  <div class="range__progress"></div>
+                </div>
+                <div class="range__btn min" id="range-btn-min" tabindex="0"></div>
+                <div class="range__btn max" id="range-btn-max" tabindex="0"></div>
+              </div>
+              <button class="filters__button" type="submit">Показать</button>
             </div>
-            <button class="filters__button" type="submit">Показать</button>
           </fieldset>
         </form>
       </section>
@@ -198,7 +200,7 @@
             </div>
             <p class="rating">Рейтинг: 8,5</p>
             <p class="type">Гостиница</p>
-            <p class="price">От 4000 Р.</p>
+            <p class="day-price">От 4000 Р.</p>
             <a class="detail" href="#">Подробнее</a>
             <a class="booking" href="#">Забронировать</a>
           </li>
@@ -217,7 +219,7 @@
             </div>
             <p class="rating">Рейтинг: 8,9</p>
             <p class="type">Мотель</p>
-            <p class="price">От 3000 Р.</p>
+            <p class="day-price">От 3000 Р.</p>
             <a class="detail" href="#">Подробнее</a>
             <a class="booking" href="#">Забронировать</a>
           </li>
@@ -236,7 +238,7 @@
             </div>
             <p class="rating">Рейтинг: 9,2</p>
             <p class="type">Апартаменты</p>
-            <p class="price">От 2000 Р.</p>
+            <p class="day-price">От 2000 Р.</p>
             <a class="detail" href="#">Подробнее</a>
             <a class="booking" href="#">Забронировать</a>
           </li>
@@ -286,7 +288,7 @@
           </li>
         </ul>
       </section>
-      <div class="develop">
+      <div class="developer">
         <span>Website by</span>
         <a class="developer__logo" href="https://htmlacademy.ru/intensive/htmlcss">
           <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="115" height="51" viewBox="0 0 114 40">
