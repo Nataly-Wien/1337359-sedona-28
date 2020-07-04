@@ -43,6 +43,22 @@
        url("../fonts/pt-sans-v11-latin_cyrillic-700.woff2") format("woff2"),
        url("../fonts/pt-sans-v11-latin_cyrillic-700.woff") format("woff");
 }
+@-moz-document url-prefix() {
+  .main-menu,
+  .reasons__tille {
+    line-height: 183%;
+  }
+  .promo__title,
+  .search-hotel__button,
+  .search__button {
+    line-height: 122%;
+  }
+  .reason__content,
+  .advise__content,
+  .offer {
+    line-height: 149%;
+  }
+}
 
 html {
   height: 100%;
@@ -65,8 +81,6 @@ a {
   font-size: 14px;
   font-weight: normal;
   line-height: 21px;
-  letter-spacing: -.1px;
-  /* line-height: 128%; */
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: var(--background-light-grey);
@@ -75,6 +89,7 @@ a {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   width: 1200px;
+  min-height: 100%;
   margin: 0 auto;
   padding: 0;
   background-color: var(--basic-white);
@@ -153,10 +168,10 @@ a {
 }
 .promo__title {
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: 42px auto 0;
   font-size: 21px;
   font-weight: bold;
-  line-height: 128%;
+  line-height: 26px;
   text-align: center;
 }
 .promo__picture-wrapper {
@@ -183,9 +198,10 @@ a {
 
 .reasons__tille {
   max-width: 900px;
-  margin: 0 auto 56px;
+  margin: 0 auto 50px;
   font-size: 14px;
   font-weight: normal;
+  line-height: 26px;
   text-align: center;
 }
 .reasons__list,
@@ -232,23 +248,19 @@ a {
   max-width: 152px;
   font-size: 21px;
   font-weight: bold;
-  /* line-height: 22px; */
-  line-height: 105%;
+  line-height: 21px;
 }
 .reason__content,
 .advise__content {
-  max-width: 300px;
+  max-width: 305px;
   margin: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 22px;
 }
 .reason__content::before {
   display: block;
   counter-increment: num;
   content: "— №" counter(num) " —";
-  margin-top: 25px;
-  margin-bottom: 23px;
+  margin-top: 26px;
+  margin-bottom: 25px;
 }
 
 /* Советы */
@@ -265,8 +277,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 53px;
-  padding-bottom: 82px;
+  padding-top: 55px;
+  padding-bottom: 83px;
 }
 .advise::before {
   content: "";
@@ -309,20 +321,24 @@ a {
 .interest {
   max-width: 900px;
   margin: 56px auto 35px;
+  margin: 55px auto 29px;
   font-size: 30px;
   font-weight: bold;
   line-height: 26px;
+  line-height: 30px;
   text-align: center;
 }
 .offer {
   margin: 0;
   margin-bottom: 47px;
+  margin-bottom: 45px;
+  line-height: 24px;
   text-align: center;
   color: var(--basic-dark);
 }
 .search-hotel__button {
   width: 568px;
-  padding: 30px 35px 31px;
+  padding: 30px 35px 30px;
   background-color: var(--basic-brown);
 }
 .search-hotel__button:hover,
@@ -367,9 +383,9 @@ a {
   top: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 31px;
+  grid-row-gap: 29px;
   align-items: center;
-  font-size: 0;;
+  font-size: 0;
   font-weight: bold;
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px var(--shadow-popup);
@@ -403,8 +419,9 @@ input[type="number"] {
 }
 .search input {
   box-sizing: border-box;
+  height: 38px;
   margin: 0;
-  padding: 10px 12px;
+  padding: 10px 11px;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -471,7 +488,7 @@ label.right {
 .search__button {
   grid-column: 1 / 5;
   padding: 16px;
-  margin-top: 25px;
+  margin-top: 26px;
   background-color: var(--basic-blue);
 }
 .search__button:hover,
@@ -495,7 +512,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  padding: 23px 48px 36px 40px;
+  padding: 23px 50px 36px 37px;
   background-color: var(--white-09);
 }
 .main-footer {
@@ -525,7 +542,7 @@ footer {
 .social__list {
   list-style: none;
   margin: 0;
-  margin-right: 18px;
+  margin-right: 15px;
   padding: 0;
   display: flex;
 }
@@ -582,7 +599,7 @@ footer {
 
 .filters {
   color: var(--basic-white);
-  padding: 26px 73px 27px;
+  padding: 26px 73px 25px;
   background-color: var(--background-filter);
   background-image: url("../img/filter-photo.jpg");
   background-position: center;
@@ -610,7 +627,7 @@ fieldset.price {
 }
 .filters legend {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   font-size: 16px;
   font-weight: bold;
   line-height: 21px;
@@ -618,7 +635,7 @@ fieldset.price {
 }
 .price legend {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .filters ul {
   list-style: none;
@@ -692,7 +709,7 @@ fieldset.price {
 }
 .price__block {
   margin: 0;
-  padding: 6px 30px 8px 64px;
+  padding: 6px 40px 6px 64px;
   border: 2px solid var(--basic-white);
   border-radius: 2px;
 }
@@ -718,7 +735,7 @@ fieldset.price {
   width: 316px;
   height: 24px;
   margin-bottom: 18px;
-  padding: 17px 0 18px;
+  padding: 20px 0 16px;
 }
 .range__scale {
   width: 316px;
@@ -735,7 +752,7 @@ fieldset.price {
   display: block;
   width: 4px;
   height: 4px;
-  top: 8px;
+  top: 10px;
   border: 8px solid var(--basic-white);
   border-radius: 50%;
   background-color: var(--range-grey);
@@ -752,13 +769,14 @@ fieldset.price {
   left: 0;
 }
 .range__btn.max {
-  left: 251px;
+  left: 252px;
 }
 .filters__button {
   box-sizing: border-box;
   min-width: 137px;
   max-width: 160px;
-  padding: 8px 20px 7px;
+  margin-right: 10px;
+  padding: 7px 20px 5px;
   font-size: 14px;
   font-weight: normal;
   line-height: 21px;
@@ -826,7 +844,7 @@ fieldset.price {
   border: none;
 }
 .sort__icon {
-  margin-left: 12px;
+  margin-left: 10px;
 }
 .sort__direction {
   line-height: 0;
@@ -849,7 +867,7 @@ fieldset.price {
   margin-top: -74px;
 }
 .results__title {
-  margin: 5px 10px 35px 73px;
+  margin: 5px 10px 33px 73px;
   font-size: 21px;
   font-weight: bold;
   line-height: 26px;
@@ -878,6 +896,7 @@ fieldset.price {
   display: block;
   width: 135px;
   height: 90px;
+  object-fit: cover;
 }
 .results__item h3 {
   margin: 0;
@@ -900,11 +919,13 @@ fieldset.price {
   grid-area: star;
   display: flex;
   justify-content: flex-end;
+  margin-right: -2px;
 }
 .star {
   display: block;
   width: 19px;
   height: 17px;
+  margin-top: -1px;
   background-image: url("../img/star.svg");
 }
 .star + .star {
