@@ -9,6 +9,12 @@ var plusAdult = searchForm.plusAdult;
 var minusKid = searchForm.minusKid;
 var plusKid = searchForm.plusKid;
 
+window.onload = function (evt) {
+  if (searchForm.classList.contains('search-visible')) {
+    searchForm.classList.remove('search-visible');
+  }
+};
+
 function closeForm() {
   if (searchForm.classList.contains('submit-error')) {
     searchForm.classList.remove('submit-error');
