@@ -388,20 +388,52 @@ a {
 .search-visible {
   display: grid;
 }
-@keyframes down {
+@-webkit-keyframes down {
   0% {
     top: 55%;
     height: 130px;
+    box-shadow: none ;
   }
   100% {
     top: 100%;
     height: 395px;
+    box-shadow: 0px 7px 15px var(--shadow-popup);
+  }
+}
+@keyframes down {
+  0% {
+    top: 55%;
+    height: 130px;
+    box-shadow: none ;
+  }
+  100% {
+    top: 100%;
+    height: 395px;
+    box-shadow: 0px 7px 15px var(--shadow-popup);
   }
 }
 .search-appear {
-  animation-name: down;
-  animation-duration: .4s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: down;
+          animation-name: down;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+    transform-origin: 0% 100%;
+    transform: rotate(-2deg);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+    transform-origin: 100% 100%;
+    transform: rotate(2deg);
+  }
 }
 @keyframes shake {
   0%, 100% {
@@ -419,8 +451,10 @@ a {
   }
 }
 .submit-error {
-  animation-name: shake;
-  animation-duration: 0.8s;
+  -webkit-animation-name: shake;
+          animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
 }
 .search label {
   font-size: 14px;
@@ -456,14 +490,16 @@ input[type="number"] {
   background-color: var(--background-light-grey);
   border: none;
 }
-.search input:hover,
-.search input:focus {
+.search input:hover {
   background-color: var(--background-hover-grey);
 }
+.search input:focus,
 .search input:active {
   background-color: var(--basic-white);
   border: 2px solid var(--line-grey);
   padding: 8px 10px;
+  outline: none;
+  padding: 8px 9px;
 }
 .search input[type="text"] {
   width: 346px;
@@ -540,6 +576,9 @@ label.right {
   position: relative;
   top: -100%;
   z-index: 2;
+}
+.map iframe {
+  border: none;
 }
 
 /* Подвал */
@@ -796,17 +835,34 @@ fieldset.price {
   box-shadow: 0 2px 0 0 var(--range-grey-transparent);
   cursor: pointer;
 }
+.range__btn.min {
+  left: 0;
+}
+.range__btn.max {
+  left: 252px;
+}
 .range__btn:hover,
 .range__btn:focus,
 .range__btn:active {
   top: 11px;
   border-width: 9px;
 }
-.range__btn.min {
-  left: 0;
+.filters__button:hover,
+.filters__button:focus,
+.filters__button:active {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
 }
-.range__btn.max {
-  left: 252px;
+.range__btn.min:hover,
+.range__btn.min:focus,
+.range__btn.min:active
+ {
+  left: -1px;
+}
+.range__btn.max:hover,
+.range__btn.max:focus,
+.range__btn.max:active {
+  left: 251px;
 }
 .filters__button {
   box-sizing: border-box;
@@ -823,12 +879,6 @@ fieldset.price {
   border-radius: 2px;
   background-color: transparent;
   cursor: pointer;
-}
-.filters__button:hover,
-.filters__button:focus,
-.filters__button:active {
-  background-color: var(--basic-white);
-  color: var(--basic-black);
 }
 
 /* Сортировка */
@@ -933,15 +983,17 @@ fieldset.price {
   display: block;
   width: 135px;
   height: 90px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: var(--background-map);
 }
 .results__item h3 {
   margin: 0;
+  margin-top: -8px;
   padding: 0;
   font-size: 21px;
   font-weight: bold;
-  line-height: 10px;
+  line-height: 26px;
 }
 .results__item .name {
   grid-area: title;
@@ -949,6 +1001,7 @@ fieldset.price {
 .results__item .name:hover,
 .results__item .name:focus {
   color: var(--basic-blue);
+  outline: none;
 }
 .results__item .name:active {
   color: var(--black-03);
@@ -974,6 +1027,7 @@ fieldset.price {
   min-width: 83px;
   margin: 0;
   padding: 3px 12px 3px 15px;
+  text-align: right;
   color: var(--basic-grey);
   background-color: var(--background-light-grey);
 }
