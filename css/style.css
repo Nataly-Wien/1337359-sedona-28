@@ -14,6 +14,7 @@
   --background-hover-grey: #EBEBEB;
   --background-grey: #EEEEEE;
   --background-filter: #4C77A1;
+  --background-map: #C8DDA9;
   --line-grey: #E5E5E5;
   --range-grey: #ABABAB;
   --range-grey-transparent: rgba(171, 171, 171, 0.3);
@@ -312,11 +313,12 @@ a {
 
 .search-hotel {
   position: relative;
-  /* z-index: 4; */
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  background-color: var(--basic-white);
 }
 .interest {
   max-width: 900px;
@@ -365,23 +367,16 @@ a {
 
 /* Форма поиска гостиницы */
 
-/* @keyframes down {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(50%);
-  }
-} */
 .search {
+  display: none;
   position: absolute;
-  /* z-index: 3; */
+  z-index: -1;
+  overflow: hidden;
   box-sizing: border-box;
   width: 568px;
   margin: 0 auto;
   padding: 55px;
   top: 100%;
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 29px;
   align-items: center;
@@ -389,10 +384,43 @@ a {
   font-weight: bold;
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px var(--shadow-popup);
-  /* animation-name: down;
-  animation-delay: 3s;
-  animation-duration: 1s;
-  animation-fill-mode: forwards; */
+}
+.search-visible {
+  display: grid;
+}
+@keyframes down {
+  0% {
+    top: 55%;
+    height: 130px;
+  }
+  100% {
+    top: 100%;
+    height: 395px;
+  }
+}
+.search-appear {
+  animation-name: down;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+    transform-origin: 0% 100%;
+    transform: rotate(-2deg);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+    transform-origin: 100% 100%;
+    transform: rotate(2deg);
+  }
+}
+.submit-error {
+  animation-name: shake;
+  animation-duration: 0.8s;
 }
 .search label {
   font-size: 14px;
@@ -503,12 +531,21 @@ label.right {
   color: var(--white-03);
 }
 .map {
-  /* z-index: 2; */
+  width: 100%;
+  height: 594px;
+  line-height: 0;
+  background-color: var(--background-map);
+}
+.map__wrapper {
+  position: relative;
+  top: -100%;
+  z-index: 2;
 }
 
 /* Подвал */
 
 footer {
+  z-index: 4;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -689,7 +726,7 @@ fieldset.price {
   fill: var(--checkbox-grey);
 }
 .filters__input:focus + .filters__checkbox {
-  filter: drop-shadow(0 0 2px var(--background-grey));
+  outline: 1px solid var(--triangle-grey);
 }
 
 /* Блок с ценой */
@@ -752,7 +789,7 @@ fieldset.price {
   display: block;
   width: 4px;
   height: 4px;
-  top: 10px;
+  top: 12px;
   border: 8px solid var(--basic-white);
   border-radius: 50%;
   background-color: var(--range-grey);
@@ -762,7 +799,7 @@ fieldset.price {
 .range__btn:hover,
 .range__btn:focus,
 .range__btn:active {
-  top: 7px;
+  top: 11px;
   border-width: 9px;
 }
 .range__btn.min {
@@ -897,6 +934,7 @@ fieldset.price {
   width: 135px;
   height: 90px;
   object-fit: cover;
+  background-color: var(--background-map);
 }
 .results__item h3 {
   margin: 0;

@@ -100,12 +100,11 @@
         <p class="offer">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Cедоне
         </p>
         <button class="search-hotel__button">Поиск гостиницы в Седоне</button>
-        <form class="search" id="search-form" action="https://echo.htmlacademy.ru" method="get">
-          <label for="search-date-in">Дата заезда:</label>
+        <form class="search" id="search" action="https://echo.htmlacademy.ru" method="get">
+          <label for="dateIn">Дата заезда:</label>
           <span>
-            <input type="text" name="search-date-in" id="search-date-in" value="24 апреля 2017">
-            <button class="calender" type="button" id="search-calender-in"
-              aria-label="Открыть календарь для выбора даты">
+            <input type="text" name="dateIn" id="dateIn" value="24 апреля 2017">
+            <button class="calender" type="button" id="calenderIn" aria-label="Открыть календарь для выбора даты">
               <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M16.406 3.025h2.845c.966 0 1.749.822 1.749 1.837v16.302C21 22.179 20.217 23 19.251 23H1.75C.784 23 0 22.179 0 21.164V4.862c0-1.015.784-1.837 1.75-1.837h2.843V1.648c0-.381.294-.689.657-.689.362 0 .656.308.656.689v1.377h3.938V1.648c0-.381.294-.689.657-.689.361 0 .655.308.655.689v1.377h3.938V1.648c0-.381.293-.689.656-.689.362 0 .656.308.656.689v1.377zm3.159 18.459a.448.448 0 00.123-.32h.001V4.862a.449.449 0 00-.437-.459h-2.845v1.378c0 .381-.294.689-.656.689-.363 0-.656-.308-.656-.689V4.403h-3.938v1.378c0 .381-.294.689-.655.689-.363 0-.657-.308-.657-.689V4.403H5.907v1.378c0 .381-.294.689-.656.689-.363 0-.657-.308-.657-.689V4.403H1.75a.45.45 0 00-.438.459v16.302a.45.45 0 00.438.459h17.501a.448.448 0 00.314-.139z"
@@ -115,11 +114,10 @@
                   fill="#A9A9A9" /></svg>
             </button>
           </span>
-          <label for="search-date-out">Дата выезда:</label>
+          <label for="dateOut">Дата выезда:</label>
           <span>
-            <input type="text" name="search-date-out" id="search-date-out" value="4 июля 2017">
-            <button class="calender" type="button" id="search-calender-out"
-              aria-label="Открыть календарь для выбора даты">
+            <input type="text" name="dateOut" id="dateOut" value="4 июля 2017">
+            <button class="calender" type="button" id="calenderOut" aria-label="Открыть календарь для выбора даты">
               <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M16.406 3.025h2.845c.966 0 1.749.822 1.749 1.837v16.302C21 22.179 20.217 23 19.251 23H1.75C.784 23 0 22.179 0 21.164V4.862c0-1.015.784-1.837 1.75-1.837h2.843V1.648c0-.381.294-.689.657-.689.362 0 .656.308.656.689v1.377h3.938V1.648c0-.381.294-.689.657-.689.361 0 .655.308.655.689v1.377h3.938V1.648c0-.381.293-.689.656-.689.362 0 .656.308.656.689v1.377zm3.159 18.459a.448.448 0 00.123-.32h.001V4.862a.449.449 0 00-.437-.459h-2.845v1.378c0 .381-.294.689-.656.689-.363 0-.656-.308-.656-.689V4.403h-3.938v1.378c0 .381-.294.689-.655.689-.363 0-.657-.308-.657-.689V4.403H5.907v1.378c0 .381-.294.689-.656.689-.363 0-.657-.308-.657-.689V4.403H1.75a.45.45 0 00-.438.459v16.302a.45.45 0 00.438.459h17.501a.448.448 0 00.314-.139z"
@@ -129,30 +127,36 @@
                   fill="#A9A9A9" /></svg>
             </button>
           </span>
-          <label for="search-adults">Взрослые:</label>
+          <label for="adults">Взрослые:</label>
           <span class="left-column">
-            <button class="person-number minus" type="button" id="search-minus-adult"
+            <button class="person-number minus" type="button" id="minusAdult"
               aria-label="Минус один взрослый">&ndash;</button>
-            <input type="number" name="search-adults" id="search-adults" value="2">
-            <button class="person-number plus adult" type="button" id="search-plus-adult"
+            <input type="number" name="adults" id="adults" value="2" required>
+            <button class="person-number plus adult" type="button" id="plusAdult"
               aria-label="Плюс один взрослый">+</button>
           </span>
-          <label class="right" for="search-kids">Дети:</label>
+          <label class="right" for="kids">Дети:</label>
           <span class="right-column">
-            <button class="person-number minus" type="button" id="search-minus-kid"
+            <button class="person-number minus" type="button" id="minusKid"
               aria-label="Минус один ребенок">&ndash;</button>
-            <input type="number" name="search-kids" id="search-kids" value="0">
-            <button class="person-number plus kid" type="button" id="search-plus-kid"
-              aria-label="Плюс один ребенок">+</button>
+            <input type="number" name="search-kids" id="kids" value="0" required>
+            <button class="person-number plus kid" type="button" id="plusKid" aria-label="Плюс один ребенок">+</button>
           </span>
           <button class="search__button" type="submit">Найти</button>
         </form>
       </section>
+
       <section class="map">
         <h2 class="visually-hidden">
           Как проехать в Седону
         </h2>
-        <img src="img/map.jpg" width="1199" height="593" alt="Карта штата с городом Седона посередине">
+        <img src="img/map.jpg" width="1200" height="593" alt="Карта штата с городом Седона посередине">
+        <div class="map__wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838162.888095632!2d-112.35544178588502!3d34.85437338103148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sat!4v1593868647775!5m2!1sru!2sat"
+            width="1200" height="594" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+        </div>
       </section>
     </main>
 
@@ -209,6 +213,7 @@
       </div>
     </footer>
   </div>
+  <script src="js/script.js"></script>
 
 </body>
 
