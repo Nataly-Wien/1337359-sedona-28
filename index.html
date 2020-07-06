@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize1.css">
+  <link rel="stylesheet" href="css/style1.css">
 </head>
 
 <body class="page-body">
@@ -96,14 +96,13 @@
       <section class="search-hotel">
         <h2 class="visually-hidden">Подбор жилья</h2>
         <p class="interest">Заинтересовались?</p>
-        <!-- Не поняла: здесь отправка формы или переход на страницу отелей к подбору гостиницы? -->
         <p class="offer">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Cедоне
         </p>
         <button class="search-hotel__button">Поиск гостиницы в Седоне</button>
         <form class="search search-visible" id="search" action="https://echo.htmlacademy.ru" method="get">
           <label for="dateIn">Дата заезда:</label>
-          <span>
-            <input type="text" name="dateIn" id="dateIn" value="24 апреля 2017">
+          <p>
+            <input type="text" name="dateIn" id="dateIn" placeholder="24 апреля 2017">
             <button class="calender" type="button" id="calenderIn" aria-label="Открыть календарь для выбора даты">
               <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -113,10 +112,10 @@
                   d="M4.594 9.225h2.625v2.066H4.594V9.225zm0 3.443h2.625v2.067H4.594v-2.067zm2.625 3.444H4.594v2.066h2.625v-2.066zm1.969 0h2.625v2.066H9.188v-2.066zm2.625-3.444H9.188v2.067h2.625v-2.067zM9.188 9.225h2.625v2.066H9.188V9.225zm7.218 6.887h-2.625v2.066h2.625v-2.066zm-2.625-3.444h2.625v2.067h-2.625v-2.067zm2.625-3.443h-2.625v2.066h2.625V9.225z"
                   fill="#A9A9A9" /></svg>
             </button>
-          </span>
+          </p>
           <label for="dateOut">Дата выезда:</label>
-          <span>
-            <input type="text" name="dateOut" id="dateOut" value="4 июля 2017">
+          <p>
+            <input type="text" name="dateOut" id="dateOut" placeholder="4 июля 2017">
             <button class="calender" type="button" id="calenderOut" aria-label="Открыть календарь для выбора даты">
               <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 21 23">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -126,22 +125,22 @@
                   d="M4.594 9.225h2.625v2.066H4.594V9.225zm0 3.443h2.625v2.067H4.594v-2.067zm2.625 3.444H4.594v2.066h2.625v-2.066zm1.969 0h2.625v2.066H9.188v-2.066zm2.625-3.444H9.188v2.067h2.625v-2.067zM9.188 9.225h2.625v2.066H9.188V9.225zm7.218 6.887h-2.625v2.066h2.625v-2.066zm-2.625-3.444h2.625v2.067h-2.625v-2.067zm2.625-3.443h-2.625v2.066h2.625V9.225z"
                   fill="#A9A9A9" /></svg>
             </button>
-          </span>
+          </p>
           <label for="adults">Взрослые:</label>
-          <span class="left-column">
+          <p class="left-column">
             <button class="person-number minus" type="button" id="minusAdult"
               aria-label="Минус один взрослый">&ndash;</button>
-            <input type="number" name="adults" id="adults" value="2" required>
+            <input type="number" name="adults" id="adults" placeholder="2" required>
             <button class="person-number plus adult" type="button" id="plusAdult"
               aria-label="Плюс один взрослый">+</button>
-          </span>
+          </p>
           <label class="right" for="kids">Дети:</label>
-          <span class="right-column">
+          <p class="right-column">
             <button class="person-number minus" type="button" id="minusKid"
               aria-label="Минус один ребенок">&ndash;</button>
-            <input type="number" name="search-kids" id="kids" value="0" required>
+            <input type="number" name="search-kids" id="kids" placeholder="0" required>
             <button class="person-number plus kid" type="button" id="plusKid" aria-label="Плюс один ребенок">+</button>
-          </span>
+          </p>
           <button class="search__button" type="submit">Найти</button>
         </form>
       </section>
@@ -212,7 +211,7 @@
       </div>
     </footer>
   </div>
-  <script src="js/script.js"></script>
+  <script src="js/script1.js"></script>
 
 </body>
 
