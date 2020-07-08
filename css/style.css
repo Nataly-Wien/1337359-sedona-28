@@ -33,16 +33,16 @@
   font-style: normal;
   font-weight: 400;
   src: local("PT Sans"), local("PTSans-Regular"),
-       url("../fonts/pt-sans-v11-latin_cyrillic-regular.woff2") format("woff2"),
-       url("../fonts/pt-sans-v11-latin_cyrillic-regular.woff") format("woff");
+       url("../fonts/pt-sans-v11-latin-cyrillic-regular.woff2") format("woff2"),
+       url("../fonts/pt-sans-v11-latin-cyrillic-regular.woff") format("woff");
 }
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   src: local("PT Sans Bold"), local("PTSans-Bold"),
-       url("../fonts/pt-sans-v11-latin_cyrillic-700.woff2") format("woff2"),
-       url("../fonts/pt-sans-v11-latin_cyrillic-700.woff") format("woff");
+       url("../fonts/pt-sans-v11-latin-cyrillic-700.woff2") format("woff2"),
+       url("../fonts/pt-sans-v11-latin-cyrillic-700.woff") format("woff");
 }
 @-moz-document url-prefix() {
   .main-menu,
