@@ -43,7 +43,7 @@
       </section>
 
       <section class="reasons">
-        <h2 class="reasons__tille">
+        <h2 class="reasons__title">
           Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!
         </h2>
         <ol class="reasons__list">
@@ -130,7 +130,7 @@
           <p class="left-column">
             <button class="person-number minus" type="button" id="minusAdult"
               aria-label="Минус один взрослый">&ndash;</button>
-            <input type="number" name="adults" id="adults" placeholder="2" required>
+            <input type="number" name="adults" id="adults" placeholder="2" min="0" max="50" required>
             <button class="person-number plus adult" type="button" id="plusAdult"
               aria-label="Плюс один взрослый">+</button>
           </p>
@@ -138,7 +138,7 @@
           <p class="right-column">
             <button class="person-number minus" type="button" id="minusKid"
               aria-label="Минус один ребенок">&ndash;</button>
-            <input type="number" name="search-kids" id="kids" placeholder="0" required>
+            <input type="number" name="search-kids" id="kids" value="0" min="0" max="50" required>
             <button class="person-number plus kid" type="button" id="plusKid" aria-label="Плюс один ребенок">+</button>
           </p>
           <button class="search__button" type="submit">Найти</button>

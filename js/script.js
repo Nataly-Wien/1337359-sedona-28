@@ -1,4 +1,5 @@
 var searchButton = document.querySelector('.search-hotel__button');
+var submitButton = document.querySelector('.search__button');
 var searchForm = document.forms.search;
 var dateIn = searchForm.dateIn;
 var dateOut = searchForm.dateOut;
@@ -27,29 +28,40 @@ searchButton.addEventListener('click', function (evt) {
   evt.preventDefault();
   searchForm.classList.toggle('search-visible');
   searchForm.classList.toggle('search-appear');
-  searchForm.offsetWidth = searchForm.offsetWidth;
 })
 
-searchForm.addEventListener('submit', function (evt) {
+myCheckValidity = function () {
   if (searchForm.classList.contains('submit-error')) {
     searchForm.classList.remove('submit-error');
+    searchForm.offsetWidth = searchForm.offsetWidth;
   }
-  if (!dateIn.value || !dateOut.value || (adultNumber.value === '0' && kidNumber.value === '0')) {
-    evt.preventDefault();
-    if (!dateIn.value) {
-      dateIn.focus();
+  searchForm.classList.add('submit-error');
+  if (!dateIn.value) {
+    dateIn.focus();
+  } else
+    if (!dateOut.value) {
+      dateOut.focus();
     } else
-      if (!dateOut.value) {
-        dateOut.focus();
-      } else
-        if (adultNumber.value === "0") {
-          adultNumber.focus();
-        } else {
-          kidNumber.focus();
-        }
-    searchForm.classList.add('submit-error');
+      if (!adultNumber.validity.valid || Number(adultNumber.value) === 0) {
+        adultNumber.focus();
+      } else {
+        kidNumber.focus();
+      }
+}
+
+searchForm.addEventListener('submit', function (evt) {
+  if (!dateIn.value || !dateOut.value || Number(adultNumber.value) === 0 && Number(kidNumber.value) === 0) {
+    evt.preventDefault();
+    myCheckValidity();
   } else {
     closeForm();
+  }
+})
+
+submitButton.addEventListener('click', function (evt) {
+  if (!searchForm.checkValidity()) {
+    evt.preventDefault();
+    myCheckValidity();
   }
 })
 
